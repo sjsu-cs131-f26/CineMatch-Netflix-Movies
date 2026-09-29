@@ -1,0 +1,2 @@
+-rw-r--r-- 1 pouyaa jelenag 4.3G Sep 23 08:47 /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.principals.tsv
+101892809 /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.principals.tsv
