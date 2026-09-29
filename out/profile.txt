@@ -1,0 +1,27 @@
+Profile: IMDb Non-Commercial Datasets (7 TSV files)
+Data path: /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data
+Source: https://datasets.imdbws.com/ (downloaded 2026-09-23)
+
+Command: du -cb $DATA/*.tsv
+968819877	/mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/name.basics.tsv
+3012531860	/mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.akas.tsv
+1112128147	/mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.basics.tsv
+421677370	/mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.crew.tsv
+260423074	/mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.episode.tsv
+4554594545	/mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.principals.tsv
+29923343	/mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.ratings.tsv
+10360098216	total
+
+Command: wc -l $DATA/*.tsv
+   15676584 /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/name.basics.tsv
+   59464906 /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.akas.tsv
+   12810798 /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.basics.tsv
+   12810798 /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.crew.tsv
+    9906087 /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.episode.tsv
+  101892809 /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.principals.tsv
+    1713059 /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.ratings.tsv
+  214275041 total
+
+Selected Sprint 2 table: title.basics.tsv (data rows, header excluded)
+Command: tail -n +2 $DATA/title.basics.tsv | wc -l
+12810797
