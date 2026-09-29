@@ -1,0 +1,13 @@
+Aneesh Matcha – Big Data Storyteller (Sprint 2)
+Hadi Khan – Project Manager (Spring 2)
+Pouya Anvari – Big Data Storyteller (Spring 2)
+Krishna Kuchibhatla – Big Data Engineer (Sprint 2)
+Prajwal Dacharla – Big Data Engineer (Sprint 2)
+
+
+
+ repository URL: https://github.com/sjsu-cs131-f26/CineMatch-Netflix-Movies
+ dataset URL: https://datasets.imdbws.com/
+
+Jira: https://cs131-project.atlassian.net/jira/core/projects/CSPROJ/board?filter=&groupBy=none
+
