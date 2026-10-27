@@ -1,0 +1,6 @@
+partition_id	partition_path
+era_1980_1999	/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_1980_1999.parquet
+era_2000_2009	/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_2000_2009.parquet
+era_2010_2019	/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_2010_2019.parquet
+era_2020_later	/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_2020_later.parquet
+era_before_1980	/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_before_1980.parquet

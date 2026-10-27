@@ -1,0 +1,1 @@
+35 4 * * * /mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/scripts/run_scheduled.sh >> /mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/logs/cron.log 2>&1

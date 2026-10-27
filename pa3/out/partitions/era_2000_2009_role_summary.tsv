@@ -1,0 +1,14 @@
+partition_id	role_rank	role_category	credit_count	avg_billing_order
+era_2000_2009	1	actor	3417984	4.80
+era_2000_2009	2	actress	2729293	4.72
+era_2000_2009	3	self	2314913	3.80
+era_2000_2009	4	writer	750309	6.13
+era_2000_2009	5	director	729131	5.02
+era_2000_2009	6	producer	399684	6.08
+era_2000_2009	7	editor	231426	6.50
+era_2000_2009	8	cinematographer	195363	6.53
+era_2000_2009	9	composer	173082	6.41
+era_2000_2009	10	archive-footage	92095	5.11
+era_2000_2009	11	production-designer	21811	7.26
+era_2000_2009	12	casting_director	14526	6.56
+era_2000_2009	13	archive-sound	1319	4.90
