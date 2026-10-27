@@ -1,0 +1,29 @@
+1. Partition rule: credits are split by the release era of the title (title.basics startYear): before_1980, 1980_1999, 2000_2009, 2010_2019, 2020_later. This fits the project because it lets us compare which roles get top billing in different eras. Titles with no startYear (\N) are left out.
+
+2. state/partition_manifest.tsv:
+partition_id	partition_path
+era_1980_1999	/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_1980_1999.parquet
+era_2000_2009	/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_2000_2009.parquet
+era_2010_2019	/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_2010_2019.parquet
+era_2020_later	/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_2020_later.parquet
+era_before_1980	/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_before_1980.parquet
+
+3. Cron entry (schedule/pa3.cron):
+35 4 * * * /mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/scripts/run_scheduled.sh >> /mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/logs/cron.log 2>&1
+35 = minute 35, 4 = hour 4 (4:35 AM server time, EDT), * = every day of the month, * = every month, * = every day of the week. So it runs once a day at 4:35 AM.
+
+4. crontab -l after install:
+35 4 * * * /mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/scripts/run_scheduled.sh >> /mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/logs/cron.log 2>&1
+
+5. Scheduled run log (logs/cron.log):
+2026-10-27 04:35:08 partition_id=era_1980_1999 path=/mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_1980_1999.parquet start="2026-10-27 04:35:08" end="2026-10-27 04:35:08" exit_status=0
+
+6. Partition outputs:
+total 8
+-rw-r--r-- 1 aneeshm jelenag 574 2026-10-27 04:35 era_1980_1999_role_summary.tsv
+-rw-r--r-- 1 aneeshm jelenag 577 2026-10-27 04:30 era_2000_2009_role_summary.tsv
+
+7. Success markers:
+era_1980_1999 finished 2026-10-27 04:35:08 exit_status=0
+
+Note: era_2000_2009_role_summary.tsv (04:30) is from a manual test of run_partition.sh, not a cron run. It has no .done marker, so cron will process that partition on the next daily run. Because of the assignment deadline, only the daily runs completed before submission are shown.

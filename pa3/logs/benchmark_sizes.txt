@@ -1,0 +1,5 @@
+benchmark source: first 1000000 records of /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/title.principals.tsv
+analysis-ready rows: 1000000
+text bytes: 30269468
+parquet bytes: 6603243
+parquet conversion real seconds: 0.452

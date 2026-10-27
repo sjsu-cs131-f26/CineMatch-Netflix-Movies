@@ -1,0 +1,2 @@
+[INFO] Processing partition era_1980_1999 from /mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/work/partitions/era_1980_1999.parquet
+[OK] Wrote /mnt/scratch/CS131_jelenag/students/aneeshm/CineMatch-Netflix-Movies/pa3/out/partitions/era_1980_1999_role_summary.tsv

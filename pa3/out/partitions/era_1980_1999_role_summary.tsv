@@ -1,0 +1,14 @@
+partition_id	role_rank	role_category	credit_count	avg_billing_order
+era_1980_1999	1	actor	3095472	5.03
+era_1980_1999	2	actress	2287085	4.87
+era_1980_1999	3	self	1649535	3.45
+era_1980_1999	4	writer	503654	6.21
+era_1980_1999	5	director	459984	5.44
+era_1980_1999	6	producer	242699	5.86
+era_1980_1999	7	editor	102819	6.56
+era_1980_1999	8	composer	86396	6.36
+era_1980_1999	9	cinematographer	83479	6.38
+era_1980_1999	10	archive-footage	51632	5.08
+era_1980_1999	11	production-designer	16419	7.06
+era_1980_1999	12	casting_director	10970	6.51
+era_1980_1999	13	archive-sound	700	4.85
