@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# PA3 ignores (do not commit large data, DuckDB files, or Parquet files)
+pa3/work/
+pa3/partitions/
+*.duckdb
+*.duckdb.wal
+*.parquet

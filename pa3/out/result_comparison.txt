@@ -1,0 +1,3 @@
+shell result versus DuckDB text result
+DuckDB text result versus DuckDB Parquet result
+ALL THREE RESULTS AGREE: shell_result.tsv, duckdb_text_result.tsv, and duckdb_parquet_result.tsv are identical.
