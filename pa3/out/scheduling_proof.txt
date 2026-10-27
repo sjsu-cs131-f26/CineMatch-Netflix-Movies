@@ -27,3 +27,5 @@ total 8
 era_1980_1999 finished 2026-10-27 04:35:08 exit_status=0
 
 Note: era_2000_2009_role_summary.tsv (04:30) is from a manual test of run_partition.sh, not a cron run. It has no .done marker, so cron will process that partition on the next daily run. Because of the assignment deadline, only the daily runs completed before submission are shown.
+
+8. crontab -l after removing the assignment entry:

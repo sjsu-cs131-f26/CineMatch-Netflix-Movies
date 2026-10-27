@@ -1,0 +1,23 @@
+PA3 - Project Data Pipeline (Team 6, CineMatch)
+
+Team:
+Aneesh Matcha
+Hadi Khan
+Pouya Anvari
+Krishna Kuchibhatla
+Prajwal Dacharla
+
+repository URL: https://github.com/sjsu-cs131-f26/CineMatch-Netflix-Movies
+dataset URL: https://datasets.imdbws.com/
+dataset on IBM server: /mnt/scratch/CS131_jelenag/projects/team06_sec02_fall2026/imdb_data/
+
+Grader command (from the repository root):
+bash pa3/scripts/run_pipeline.sh pa3/data/sample/sample.tsv
+
+Main files:
+pa3/docs/technical_report.pdf      report (pipeline contract, benchmark, background run, scheduling, AI-use disclosure)
+pa3/out/final_analysis.tsv         final analysis artifact reused in the project
+pa3/out/result_comparison.txt      three-way equivalence check
+pa3/out/benchmark.tsv              nine timed runs on 1,000,000 records
+pa3/out/background_run_proof.txt   nohup full-data run evidence
+pa3/out/scheduling_proof.txt       partition and cron evidence
