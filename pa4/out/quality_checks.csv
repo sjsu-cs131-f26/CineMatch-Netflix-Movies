@@ -1,0 +1,8 @@
+check,value,note
+rows read,1000,
+rows with a missing or invalid required value,0,"excluded: a credit with no ID, position, or role can't be grouped or ranked"
+rows kept,1000,
+"repeated (title_id, billing_order) keys",0,not removed: two rows with the same key could be different people
+credits in the top 10 billing spots,969,
+Parquet read-back rows,1000,should equal rows kept
+Parquet read-back top-10 credits,969,should equal credits in the top 10 billing spots
