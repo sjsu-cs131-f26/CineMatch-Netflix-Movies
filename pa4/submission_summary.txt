@@ -1,0 +1,9 @@
+Team: Team 6, CineMatch
+Members: Aneesh Matcha, Hadi Khan, Krishna Kuchibhatla, Prajwal Dacharla, Pouya Anvari
+Repository: https://github.com/sjsu-cs131-f26/CineMatch-Netflix-Movies
+Assignment folder: pa4/
+Notebook: pa4/notebooks/pa4_pyspark.ipynb (open in Colab, Runtime > Run all)
+Report: pa4/docs/technical_report.pdf
+Outputs: pa4/out/ (quality_checks.csv, analysis_1.csv, analysis_2.csv,
+sample_comparison.csv, benchmark.csv)
+The full IMDb dataset and large outputs are not committed. Only the small sample in pa4/data/sample/ is.
