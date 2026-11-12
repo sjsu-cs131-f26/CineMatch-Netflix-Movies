@@ -1,0 +1,11 @@
+release_era,role_category,credit_count,avg_billing_order
+before_1980,director,418,1.50
+before_1980,actor,156,2.55
+before_1980,producer,140,3.04
+before_1980,cinematographer,102,3.56
+before_1980,actress,64,2.27
+before_1980,self,40,2.15
+before_1980,writer,39,3.23
+before_1980,composer,5,3.20
+before_1980,editor,3,5.33
+before_1980,production_designer,2,6.50
