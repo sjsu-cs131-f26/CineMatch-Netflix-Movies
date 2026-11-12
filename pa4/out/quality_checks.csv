@@ -6,3 +6,20 @@ rows kept,1000,
 credits in the top 10 billing spots,969,
 Parquet read-back rows,1000,should equal rows kept
 Parquet read-back top-10 credits,969,should equal credits in the top 10 billing spots
+prepared column types,"[('title_id', 'string'), ('billing_order', 'int'), ('person_id', 'string'), ('role_category', 'string'), ('is_top10', 'boolean')]","title_id string, billing_order int, person_id string, role_category string, is_top10 boolean"
+missing title_id after cleaning,0,should be 0
+missing role_category after cleaning,0,should be 0
+min billing_order,1,must be >= 1
+max billing_order,19,
+distinct role_category values,10,actor; actress; cinematographer; composer; director; editor; producer; production_designer; self; writer
+Parquet schema matches prepared,True,same column names and types after read-back
+Parquet read-back distinct titles,455,project check: should equal titles before saving (455)
+population sampled,1000,
+sample fraction requested,0.3,
+sample seed,131,
+sample rows,299,
+observed sample fraction,0.299,
+groups missing from sample,1,role_category=production_designer
+analysis 1 rows (csv / duckdb),10 / 10,
+analysis 1 verified with duckdb,True,
+dev sample read-back rows,299,
