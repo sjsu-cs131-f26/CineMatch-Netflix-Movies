@@ -1,0 +1,7 @@
+implementation,environment,input_rows,input_bytes,format,run,elapsed_seconds,output_rows,result_verified
+pyspark,colab local[2],1000,41464,tsv,1,0.6917,10,True
+pyspark,colab local[2],1000,41464,tsv,2,0.4858,10,True
+pyspark,colab local[2],1000,41464,tsv,3,0.5062,10,True
+duckdb,colab,1000,41464,tsv,1,0.0103,10,True
+duckdb,colab,1000,41464,tsv,2,0.011,10,True
+duckdb,colab,1000,41464,tsv,3,0.0066,10,True
