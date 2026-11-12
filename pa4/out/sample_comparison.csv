@@ -1,0 +1,13 @@
+group_column,group_value,source_count,source_percent,sample_count,sample_percent,percent_difference
+role_category,actor,161,16.1,46,15.38,-0.72
+role_category,actress,64,6.4,20,6.69,0.29
+role_category,cinematographer,107,10.7,38,12.71,2.01
+role_category,composer,12,1.2,4,1.34,0.14
+role_category,director,423,42.3,121,40.47,-1.83
+role_category,editor,3,0.3,1,0.33,0.03
+role_category,producer,143,14.3,46,15.38,1.08
+role_category,production_designer,3,0.3,0,0.0,-0.3
+role_category,self,40,4.0,12,4.01,0.01
+role_category,writer,44,4.4,11,3.68,-0.72
+is_top10,False,31,3.1,8,2.68,-0.42
+is_top10,True,969,96.9,291,97.32,0.42
