@@ -1,0 +1,15 @@
+check,value,note
+rows before cleaning,102980307,full title.principals input rows
+rows excluded,0,union of invalid required-value conditions
+rows after cleaning,102980307,rows retained after the PA4 cleaning rules
+"repeated (title_id, billing_order) keys",0,checked but not removed
+prepared rows,102980307,should equal rows after cleaning
+Parquet read-back rows,102980307,should equal prepared rows
+Parquet read-back top-10 rows,79193269,derived-column check
+prepared schema,"[('title_id', 'string'), ('billing_order', 'int'), ('person_id', 'string'), ('role_category', 'string'), ('is_top10', 'boolean')]",full prepared-data schema
+duplicate lookup keys,0,lookup key is tconst; duplicate keys checked
+top-10 rows before join,79193269,top-10 prepared credits
+unmatched top-10 rows,2512,top-10 credits without a matching basics record
+rows after join,79190757,rows retained by the inner join
+analysis 1 output rows,13,complete Analysis 1 result
+analysis 2 output rows,78,complete Analysis 2 result

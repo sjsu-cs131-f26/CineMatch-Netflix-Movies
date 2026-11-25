@@ -1,0 +1,48 @@
+createTime: '2026-11-25T04:01:03.385898Z'
+creator: hadihassan.khan@sjsu.edu
+environmentConfig:
+  executionConfig:
+    authenticationConfig: {}
+    serviceAccount: 976390621265-compute@developer.gserviceaccount.com
+    ttl: 5400s
+  peripheralsConfig:
+    sparkHistoryServerConfig: {}
+labels:
+  goog-dataproc-batch-id: pa5-prep-full-04
+  goog-dataproc-batch-uuid: 225638aa-0d36-4538-936b-9cb3340e2851
+  goog-dataproc-drz-resource-uuid: batch-225638aa-0d36-4538-936b-9cb3340e2851
+  goog-dataproc-location: us-central1
+name: projects/cs131-11-5-2026-hadikhan/locations/us-central1/batches/pa5-prep-full-04
+operation: projects/cs131-11-5-2026-hadikhan/regions/us-central1/operations/27bdcd30-248e-3e35-a81b-be60b14439df
+pysparkBatch:
+  mainPythonFileUri: gs://cinematch-team6-pa5-fa26/dependencies/full_pipeline.py
+runtimeConfig:
+  properties:
+    spark:spark.app.name: projects/cs131-11-5-2026-hadikhan/locations/us-central1/batches/pa5-prep-full-04
+    spark:spark.dataproc.autotuning.cohortId: 225638aa-0d36-4538-936b-9cb3340e2851
+    spark:spark.dataproc.engine: default
+    spark:spark.dataproc.lightningEngine.runtime: default
+    spark:spark.dataproc.scaling.version: '2'
+    spark:spark.driver.cores: '4'
+    spark:spark.driver.memory: 9600m
+    spark:spark.dynamicAllocation.executorAllocationRatio: '0.3'
+    spark:spark.executor.cores: '4'
+    spark:spark.executor.instances: '2'
+    spark:spark.executor.memory: 9600m
+  version: 2.2.91
+runtimeInfo:
+  cohortInfo:
+    cohort: 225638aa-0d36-4538-936b-9cb3340e2851
+  currentUsage:
+    acceleratorType: UNSPECIFIED
+    milliDcu: '11850'
+    shuffleStorageGb: '1200'
+    snapshotTime: '2026-11-25T04:18:51.883341Z'
+  outputUri: gs://dataproc-staging-us-central1-976390621265-lldcrfji/google-cloud-dataproc-metainfo/51426822-3728-424f-a66c-33587c9a2e49/jobs/srvls-batch-225638aa-0d36-4538-936b-9cb3340e2851/driveroutput
+  propertiesInfo: {}
+state: RUNNING
+stateHistory:
+- state: PENDING
+  stateStartTime: '2026-11-25T04:01:03.385898Z'
+stateTime: '2026-11-25T04:02:04.388745Z'
+uuid: 225638aa-0d36-4538-936b-9cb3340e2851
