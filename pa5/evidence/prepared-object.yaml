@@ -1,0 +1,14 @@
+bucket: cinematch-team6-pa5-fa26
+content_type: application/octet-stream
+crc32c_hash: 02gjfw==
+creation_time: 2026-11-25T09:00:38+0000
+etag: CPr6nvzgopgDEAE=
+generation: '1795597237992826'
+md5_hash: CXIFmQe2vpJKIsqQItBPoQ==
+metageneration: 1
+name: pa5/prepared_credits/part-00000-82a720be-34e6-49c5-9869-a4705a80fa9d-c000.snappy.parquet
+size: 571124374
+storage_class: STANDARD
+storage_class_update_time: 2026-11-25T09:00:38+0000
+storage_url: gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/part-00000-82a720be-34e6-49c5-9869-a4705a80fa9d-c000.snappy.parquet#1795597237992826
+update_time: 2026-11-25T09:00:38+0000

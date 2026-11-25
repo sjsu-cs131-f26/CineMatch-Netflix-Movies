@@ -1,0 +1,7 @@
+Batch [pa5-task-a-20261125-04] submitted.
+ERROR: (gcloud.dataproc.batches.submit.pyspark) Batch job is FAILED. Detail: Custom Service Account '976390621265-compute@developer.gserviceaccount.com' is missing required permissions: [dataproc.agents.create, dataproc.agents.delete, dataproc.agents.get, dataproc.agents.update, dataproc.tasks.lease, dataproc.tasks.listInvalidatedLeases, dataproc.tasks.reportStatus]. Service Accounts must have either 'Dataproc/Dataproc Worker' role or all permissions granted by the role. See https://cloud.google.com/dataproc/docs/concepts/iam for further details.
+Running auto diagnostics on the batch. It may take few minutes before diagnostics output is available. Please check diagnostics output by running 'gcloud dataproc batches describe' command.
+
+real	0m10.429s
+user	0m0.981s
+sys	0m0.139s

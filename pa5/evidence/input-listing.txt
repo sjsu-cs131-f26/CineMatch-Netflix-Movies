@@ -1,0 +1,9 @@
+         0  2026-11-25T07:34:08Z  gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/
+
+gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/:
+         0  2026-11-25T07:34:08Z  gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/
+         0  2026-11-25T07:34:08Z  gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/_SUCCESS
+ 571124374  2026-11-25T09:00:38Z  gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/part-00000-82a720be-34e6-49c5-9869-a4705a80fa9d-c000.snappy.parquet
+TOTAL: 4 objects, 571124374 bytes (544.67MiB)
+      9033  2026-11-25T09:14:35Z  gs://cinematch-team6-pa5-fa26/pa5/sample/prepared_credits/part-00000-9e10b347-facd-4811-bba4-329dcf3e8d74-c000.snappy.parquet
+TOTAL: 1 objects, 9033 bytes (8.82kiB)

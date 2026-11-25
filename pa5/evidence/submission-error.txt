@@ -1,0 +1,5 @@
+ERROR: (gcloud.dataproc.batches.submit.pyspark) [aneesh.matcha@sjsu.edu] does not have permission to access b instance [cinematch-team6-pa5-fa26] (or it may not exist): aneesh.matcha@sjsu.edu does not have storage.buckets.get access to the Google Cloud Storage bucket. Permission 'storage.buckets.get' denied on resource '//storage.googleapis.com/projects/_/buckets/cinematch-team6-pa5-fa26' (or it may not exist). This command is authenticated as aneesh.matcha@sjsu.edu which is the active account specified by the [core/account] property.
+
+real	0m1.263s
+user	0m0.859s
+sys	0m0.121s

@@ -1,0 +1,7 @@
+check,actual,expected
+prepared rows,1000,1000
+top-10 rows,969,969
+schema matches,True,True
+incorrect top-10 flags,0,0
+Analysis 1 output rows,10,10
+Analysis 1 differing rows,0,0

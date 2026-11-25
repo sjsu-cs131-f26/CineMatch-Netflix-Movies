@@ -1,0 +1,379 @@
+Batch [pa5-task-a-20261125-06] submitted.
+Using the default container image
+time="2026-11-25T20:38:07Z" level=warning msg="cgroup_parent is not set. Use `runtime-config` to get the runtime cgroup driver"
+time="2026-11-25T20:38:08Z" level=warning msg="cgroup_parent is not set. Use `runtime-config` to get the runtime cgroup driver"
+Waiting for container log creation
+PYSPARK_PYTHON=/opt/dataproc/conda/bin/python
+Generating /home/spark/.pip/pip.conf
+Configuring index-url as 'https://us-python.pkg.dev/artifact-registry-python-cache/virtual-python/simple/'
+JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64
+SPARK_EXTRA_CLASSPATH=
+:: loading settings :: file = /etc/spark/conf/ivysettings.xml
+26/11/25 20:38:11 WARN MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-google-hadoop-file-system.properties,hadoop-metrics2.properties
+Spark version: 3.5.3
+Application ID: app-20261125203816957-0082
+Input: gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/part-00000-82a720be-34e6-49c5-9869-a4705a80fa9d-c000.snappy.parquet Bytes: 571124374
+Session run order: 200, 32, 32, 200, 200, 32; no explicit caching
+INPUT_CHECKS: 102980307 79193269 [('title_id', 'string'), ('billing_order', 'int'), ('person_id', 'string'), ('role_category', 'string'), ('is_top10', 'boolean')]
+26/11/25 20:38:39 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:39 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:46 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:46 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:47 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:47 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+MEASUREMENT: ['shuffle_200', 1, 102980307, 571124374, 9.612193898000001, 13, True, 'pa5-task-a-20261125-06'] differing_rows: 0
+== Physical Plan ==
+AdaptiveSparkPlan (25)
++- == Final Plan ==
+   * Sort (14)
+   +- * Project (13)
+      +- Window (12)
+         +- * Sort (11)
+            +- ShuffleQueryStage (10), Statistics(sizeInBytes=672.0 B, rowCount=13)
+               +- Exchange (9)
+                  +- * HashAggregate (8)
+                     +- ShuffleQueryStage (7), Statistics(sizeInBytes=3.3 KiB, rowCount=65)
+                        +- Exchange (6)
+                           +- * HashAggregate (5)
+                              +- * Project (4)
+                                 +- * Filter (3)
+                                    +- * ColumnarToRow (2)
+                                       +- Scan parquet  (1)
++- == Initial Plan ==
+   Sort (24)
+   +- Project (23)
+      +- Window (22)
+         +- Sort (21)
+            +- Exchange (20)
+               +- HashAggregate (19)
+                  +- Exchange (18)
+                     +- HashAggregate (17)
+                        +- Project (16)
+                           +- Filter (15)
+                              +- Scan parquet  (1)
+
+
+(1) Scan parquet 
+Output [3]: [billing_order#32, role_category#34, is_top10#35]
+Batched: true
+Location: InMemoryFileIndex [gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/part-00000-82a720be-34e6-49c5-9869-a4705a80fa9d-c000.snappy.parquet]
+PushedFilters: [IsNotNull(is_top10), EqualTo(is_top10,true)]
+ReadSchema: struct<billing_order:int,role_category:string,is_top10:boolean>
+
+(2) ColumnarToRow [codegen id : 1]
+Input [3]: [billing_order#32, role_category#34, is_top10#35]
+
+(3) Filter [codegen id : 1]
+Input [3]: [billing_order#32, role_category#34, is_top10#35]
+Condition : (isnotnull(is_top10#35) AND is_top10#35)
+
+(4) Project [codegen id : 1]
+Output [2]: [billing_order#32, role_category#34]
+Input [3]: [billing_order#32, role_category#34, is_top10#35]
+
+(5) HashAggregate [codegen id : 1]
+Input [2]: [billing_order#32, role_category#34]
+Keys [1]: [role_category#34]
+Functions [2]: [partial_count(1), partial_avg(billing_order#32)]
+Aggregate Attributes [3]: [count#64L, sum#65, count#66L]
+Results [4]: [role_category#34, count#67L, sum#68, count#69L]
+
+(6) Exchange
+Input [4]: [role_category#34, count#67L, sum#68, count#69L]
+Arguments: hashpartitioning(role_category#34, 200), ENSURE_REQUIREMENTS, [plan_id=144]
+
+(7) ShuffleQueryStage
+Output [4]: [role_category#34, count#67L, sum#68, count#69L]
+Arguments: 0
+
+(8) HashAggregate [codegen id : 2]
+Input [4]: [role_category#34, count#67L, sum#68, count#69L]
+Keys [1]: [role_category#34]
+Functions [2]: [count(1), avg(billing_order#32)]
+Aggregate Attributes [2]: [count(1)#47L, avg(billing_order#32)#49]
+Results [3]: [role_category#34, count(1)#47L AS credit_count#48L, format_string(%.2f, avg(billing_order#32)#49) AS avg_billing_order#50]
+
+(9) Exchange
+Input [3]: [role_category#34, credit_count#48L, avg_billing_order#50]
+Arguments: SinglePartition, ENSURE_REQUIREMENTS, [plan_id=184]
+
+(10) ShuffleQueryStage
+Output [3]: [role_category#34, credit_count#48L, avg_billing_order#50]
+Arguments: 1
+
+(11) Sort [codegen id : 3]
+Input [3]: [role_category#34, credit_count#48L, avg_billing_order#50]
+Arguments: [credit_count#48L DESC NULLS LAST, role_category#34 ASC NULLS FIRST], false, 0
+
+(12) Window
+Input [3]: [role_category#34, credit_count#48L, avg_billing_order#50]
+Arguments: [row_number() windowspecdefinition(credit_count#48L DESC NULLS LAST, role_category#34 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS role_rank#55], [credit_count#48L DESC NULLS LAST, role_category#34 ASC NULLS FIRST]
+
+(13) Project [codegen id : 4]
+Output [4]: [role_rank#55, role_category#34, credit_count#48L, avg_billing_order#50]
+Input [4]: [role_category#34, credit_count#48L, avg_billing_order#50, role_rank#55]
+
+(14) Sort [codegen id : 4]
+Input [4]: [role_rank#55, role_category#34, credit_count#48L, avg_billing_order#50]
+Arguments: [role_rank#55 ASC NULLS FIRST], true, 0
+
+(15) Filter
+Input [3]: [billing_order#32, role_category#34, is_top10#35]
+Condition : (isnotnull(is_top10#35) AND is_top10#35)
+
+(16) Project
+Output [2]: [billing_order#32, role_category#34]
+Input [3]: [billing_order#32, role_category#34, is_top10#35]
+
+(17) HashAggregate
+Input [2]: [billing_order#32, role_category#34]
+Keys [1]: [role_category#34]
+Functions [2]: [partial_count(1), partial_avg(billing_order#32)]
+Aggregate Attributes [3]: [count#64L, sum#65, count#66L]
+Results [4]: [role_category#34, count#67L, sum#68, count#69L]
+
+(18) Exchange
+Input [4]: [role_category#34, count#67L, sum#68, count#69L]
+Arguments: hashpartitioning(role_category#34, 200), ENSURE_REQUIREMENTS, [plan_id=113]
+
+(19) HashAggregate
+Input [4]: [role_category#34, count#67L, sum#68, count#69L]
+Keys [1]: [role_category#34]
+Functions [2]: [count(1), avg(billing_order#32)]
+Aggregate Attributes [2]: [count(1)#47L, avg(billing_order#32)#49]
+Results [3]: [role_category#34, count(1)#47L AS credit_count#48L, format_string(%.2f, avg(billing_order#32)#49) AS avg_billing_order#50]
+
+(20) Exchange
+Input [3]: [role_category#34, credit_count#48L, avg_billing_order#50]
+Arguments: SinglePartition, ENSURE_REQUIREMENTS, [plan_id=116]
+
+(21) Sort
+Input [3]: [role_category#34, credit_count#48L, avg_billing_order#50]
+Arguments: [credit_count#48L DESC NULLS LAST, role_category#34 ASC NULLS FIRST], false, 0
+
+(22) Window
+Input [3]: [role_category#34, credit_count#48L, avg_billing_order#50]
+Arguments: [row_number() windowspecdefinition(credit_count#48L DESC NULLS LAST, role_category#34 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS role_rank#55], [credit_count#48L DESC NULLS LAST, role_category#34 ASC NULLS FIRST]
+
+(23) Project
+Output [4]: [role_rank#55, role_category#34, credit_count#48L, avg_billing_order#50]
+Input [4]: [role_category#34, credit_count#48L, avg_billing_order#50, role_rank#55]
+
+(24) Sort
+Input [4]: [role_rank#55, role_category#34, credit_count#48L, avg_billing_order#50]
+Arguments: [role_rank#55 ASC NULLS FIRST], true, 0
+
+(25) AdaptiveSparkPlan
+Output [4]: [role_rank#55, role_category#34, credit_count#48L, avg_billing_order#50]
+Arguments: isFinalPlan=true
+
+
+26/11/25 20:38:48 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:48 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:54 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:54 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:54 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:54 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+MEASUREMENT: ['shuffle_32', 1, 102980307, 571124374, 7.060400137999991, 13, True, 'pa5-task-a-20261125-06'] differing_rows: 0
+== Physical Plan ==
+AdaptiveSparkPlan (25)
++- == Final Plan ==
+   * Sort (14)
+   +- * Project (13)
+      +- Window (12)
+         +- * Sort (11)
+            +- ShuffleQueryStage (10), Statistics(sizeInBytes=672.0 B, rowCount=13)
+               +- Exchange (9)
+                  +- * HashAggregate (8)
+                     +- ShuffleQueryStage (7), Statistics(sizeInBytes=3.3 KiB, rowCount=65)
+                        +- Exchange (6)
+                           +- * HashAggregate (5)
+                              +- * Project (4)
+                                 +- * Filter (3)
+                                    +- * ColumnarToRow (2)
+                                       +- Scan parquet  (1)
++- == Initial Plan ==
+   Sort (24)
+   +- Project (23)
+      +- Window (22)
+         +- Sort (21)
+            +- Exchange (20)
+               +- HashAggregate (19)
+                  +- Exchange (18)
+                     +- HashAggregate (17)
+                        +- Project (16)
+                           +- Filter (15)
+                              +- Scan parquet  (1)
+
+
+(1) Scan parquet 
+Output [3]: [billing_order#79, role_category#81, is_top10#82]
+Batched: true
+Location: InMemoryFileIndex [gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/part-00000-82a720be-34e6-49c5-9869-a4705a80fa9d-c000.snappy.parquet]
+PushedFilters: [IsNotNull(is_top10), EqualTo(is_top10,true)]
+ReadSchema: struct<billing_order:int,role_category:string,is_top10:boolean>
+
+(2) ColumnarToRow [codegen id : 1]
+Input [3]: [billing_order#79, role_category#81, is_top10#82]
+
+(3) Filter [codegen id : 1]
+Input [3]: [billing_order#79, role_category#81, is_top10#82]
+Condition : (isnotnull(is_top10#82) AND is_top10#82)
+
+(4) Project [codegen id : 1]
+Output [2]: [billing_order#79, role_category#81]
+Input [3]: [billing_order#79, role_category#81, is_top10#82]
+
+(5) HashAggregate [codegen id : 1]
+Input [2]: [billing_order#79, role_category#81]
+Keys [1]: [role_category#81]
+Functions [2]: [partial_count(1), partial_avg(billing_order#79)]
+Aggregate Attributes [3]: [count#111L, sum#112, count#113L]
+Results [4]: [role_category#81, count#114L, sum#115, count#116L]
+
+(6) Exchange
+Input [4]: [role_category#81, count#114L, sum#115, count#116L]
+Arguments: hashpartitioning(role_category#81, 32), ENSURE_REQUIREMENTS, [plan_id=275]
+
+(7) ShuffleQueryStage
+Output [4]: [role_category#81, count#114L, sum#115, count#116L]
+Arguments: 0
+
+(8) HashAggregate [codegen id : 2]
+Input [4]: [role_category#81, count#114L, sum#115, count#116L]
+Keys [1]: [role_category#81]
+Functions [2]: [count(1), avg(billing_order#79)]
+Aggregate Attributes [2]: [count(1)#94L, avg(billing_order#79)#96]
+Results [3]: [role_category#81, count(1)#94L AS credit_count#95L, format_string(%.2f, avg(billing_order#79)#96) AS avg_billing_order#97]
+
+(9) Exchange
+Input [3]: [role_category#81, credit_count#95L, avg_billing_order#97]
+Arguments: SinglePartition, ENSURE_REQUIREMENTS, [plan_id=315]
+
+(10) ShuffleQueryStage
+Output [3]: [role_category#81, credit_count#95L, avg_billing_order#97]
+Arguments: 1
+
+(11) Sort [codegen id : 3]
+Input [3]: [role_category#81, credit_count#95L, avg_billing_order#97]
+Arguments: [credit_count#95L DESC NULLS LAST, role_category#81 ASC NULLS FIRST], false, 0
+
+(12) Window
+Input [3]: [role_category#81, credit_count#95L, avg_billing_order#97]
+Arguments: [row_number() windowspecdefinition(credit_count#95L DESC NULLS LAST, role_category#81 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS role_rank#102], [credit_count#95L DESC NULLS LAST, role_category#81 ASC NULLS FIRST]
+
+(13) Project [codegen id : 4]
+Output [4]: [role_rank#102, role_category#81, credit_count#95L, avg_billing_order#97]
+Input [4]: [role_category#81, credit_count#95L, avg_billing_order#97, role_rank#102]
+
+(14) Sort [codegen id : 4]
+Input [4]: [role_rank#102, role_category#81, credit_count#95L, avg_billing_order#97]
+Arguments: [role_rank#102 ASC NULLS FIRST], true, 0
+
+(15) Filter
+Input [3]: [billing_order#79, role_category#81, is_top10#82]
+Condition : (isnotnull(is_top10#82) AND is_top10#82)
+
+(16) Project
+Output [2]: [billing_order#79, role_category#81]
+Input [3]: [billing_order#79, role_category#81, is_top10#82]
+
+(17) HashAggregate
+Input [2]: [billing_order#79, role_category#81]
+Keys [1]: [role_category#81]
+Functions [2]: [partial_count(1), partial_avg(billing_order#79)]
+Aggregate Attributes [3]: [count#111L, sum#112, count#113L]
+Results [4]: [role_category#81, count#114L, sum#115, count#116L]
+
+(18) Exchange
+Input [4]: [role_category#81, count#114L, sum#115, count#116L]
+Arguments: hashpartitioning(role_category#81, 32), ENSURE_REQUIREMENTS, [plan_id=244]
+
+(19) HashAggregate
+Input [4]: [role_category#81, count#114L, sum#115, count#116L]
+Keys [1]: [role_category#81]
+Functions [2]: [count(1), avg(billing_order#79)]
+Aggregate Attributes [2]: [count(1)#94L, avg(billing_order#79)#96]
+Results [3]: [role_category#81, count(1)#94L AS credit_count#95L, format_string(%.2f, avg(billing_order#79)#96) AS avg_billing_order#97]
+
+(20) Exchange
+Input [3]: [role_category#81, credit_count#95L, avg_billing_order#97]
+Arguments: SinglePartition, ENSURE_REQUIREMENTS, [plan_id=247]
+
+(21) Sort
+Input [3]: [role_category#81, credit_count#95L, avg_billing_order#97]
+Arguments: [credit_count#95L DESC NULLS LAST, role_category#81 ASC NULLS FIRST], false, 0
+
+(22) Window
+Input [3]: [role_category#81, credit_count#95L, avg_billing_order#97]
+Arguments: [row_number() windowspecdefinition(credit_count#95L DESC NULLS LAST, role_category#81 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS role_rank#102], [credit_count#95L DESC NULLS LAST, role_category#81 ASC NULLS FIRST]
+
+(23) Project
+Output [4]: [role_rank#102, role_category#81, credit_count#95L, avg_billing_order#97]
+Input [4]: [role_category#81, credit_count#95L, avg_billing_order#97, role_rank#102]
+
+(24) Sort
+Input [4]: [role_rank#102, role_category#81, credit_count#95L, avg_billing_order#97]
+Arguments: [role_rank#102 ASC NULLS FIRST], true, 0
+
+(25) AdaptiveSparkPlan
+Output [4]: [role_rank#102, role_category#81, credit_count#95L, avg_billing_order#97]
+Arguments: isFinalPlan=true
+
+
+26/11/25 20:38:55 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:38:55 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:01 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:01 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:01 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:01 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+MEASUREMENT: ['shuffle_32', 2, 102980307, 571124374, 6.29087954500001, 13, True, 'pa5-task-a-20261125-06'] differing_rows: 0
+26/11/25 20:39:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:02 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:07 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:07 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:07 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:07 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+MEASUREMENT: ['shuffle_200', 2, 102980307, 571124374, 6.052946964, 13, True, 'pa5-task-a-20261125-06'] differing_rows: 0
+26/11/25 20:39:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:08 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:13 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:13 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:13 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:13 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+MEASUREMENT: ['shuffle_200', 3, 102980307, 571124374, 6.104315442000001, 13, True, 'pa5-task-a-20261125-06'] differing_rows: 0
+26/11/25 20:39:14 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:14 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:19 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:19 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:19 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+26/11/25 20:39:19 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+MEASUREMENT: ['shuffle_32', 3, 102980307, 571124374, 5.448974581000002, 13, True, 'pa5-task-a-20261125-06'] differing_rows: 0
+TIMES: shuffle_200 [6.052946964, 6.104315442000001, 9.612193898000001] median: 6.104315442000001 range: 3.559246934000001
+TIMES: shuffle_32 [5.448974581000002, 6.29087954500001, 7.060400137999991] median: 6.29087954500001 range: 1.6114255569999898
+26/11/25 20:39:21 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/11/25 20:39:26 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/11/25 20:39:29 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/11/25 20:39:34 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/11/25 20:39:36 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/11/25 20:39:39 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/11/25 20:39:41 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/11/25 20:39:44 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+Batch [pa5-task-a-20261125-06] finished.
+metadata:
+  '@type': type.googleapis.com/google.cloud.dataproc.v1.BatchOperationMetadata
+  batch: projects/cs131-11-5-2026-hadikhan/locations/us-central1/batches/pa5-task-a-20261125-06
+  batchUuid: c18b802e-e217-40f8-b12f-f39684b3060f
+  createTime: '2026-11-25T20:36:53.441284Z'
+  description: Batch
+  labels:
+    goog-dataproc-batch-id: pa5-task-a-20261125-06
+    goog-dataproc-batch-uuid: c18b802e-e217-40f8-b12f-f39684b3060f
+    goog-dataproc-drz-resource-uuid: batch-c18b802e-e217-40f8-b12f-f39684b3060f
+    goog-dataproc-location: us-central1
+  operationType: BATCH
+name: projects/cs131-11-5-2026-hadikhan/regions/us-central1/operations/c0251945-5a18-3af1-96bc-9e7ef65f7278
+
+real	3m39.222s
+user	0m1.509s
+sys	0m0.143s

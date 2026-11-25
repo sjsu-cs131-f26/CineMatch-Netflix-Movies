@@ -1,0 +1,14 @@
+bucket: cinematch-team6-pa5-fa26
+component_count: 16
+content_type: text/tab-separated-values
+crc32c_hash: kup8iQ==
+creation_time: 2026-11-25T00:35:43+0000
+etag: CNfbyI7woZgDEAE=
+generation: '1795566943219159'
+metageneration: 1
+name: imdb/title.principals.tsv.gz
+size: 792191292
+storage_class: STANDARD
+storage_class_update_time: 2026-11-25T00:35:43+0000
+storage_url: gs://cinematch-team6-pa5-fa26/imdb/title.principals.tsv.gz#1795566943219159
+update_time: 2026-11-25T00:35:43+0000
