@@ -32,6 +32,18 @@ The prepared Parquet read-back also contained 102,980,307 rows, including 79,193
 The title-basics lookup had 0 duplicate `tconst` keys. Of the 79,193,269 top-10 credits, 2,512 had no matching title-basics record. The inner join therefore retained 79,190,757 rows for the era analysis. These unmatched
 lookup records are reported separately from cleaning exclusions.
 
+## Notebook status
+
+`pa5/notebooks/pa5_pyspark.ipynb` is retained as a reference to the earlier PA4 notebook. It contains exploratory/sample-analysis cells and is not the canonical full-data PA5 execution path.
+
+The canonical PA5 scripts are:
+
+- `pa5/src/full_pipeline.py`
+- `pa5/src/benchmark_task_a.py`
+- `pa5/src/task_b_billing_cutoff.py`
+
+The committed full-data outputs and execution evidence are in `pa5/out/` and `pa5/evidence/`.
+
 ## Dataproc Execution
 
 Region: us-central1  
@@ -64,11 +76,11 @@ The new benchmark script passed a small local Spark test in Cloud Shell: 1,000 p
 
 The full benchmark **succeeded** as `pa5-task-a-20261125-06`, application `app-20261125203816957-0082`, on November 25. All six runs used the complete prepared input and returned 13 roles, with zero differing rows on every run. The downloaded CSVs were also checked independently against the reference; see `evidence/downloaded-results-check.txt`.
 
-The required measurements are in `out/benchmark_full.csv` (exactly six records) and `out/result_comparison.csv`. The final batch description, complete driver output including both physical plans, CLI submission output, submitted command, six result tables, and actual task-overlap screenshot are in `evidence/`. Results, duration, cost estimate, and limitations are documented below. A teammate's fresh-environment review is still required before merging; the changes are prepared for a pull request; merge and Canvas submission remain pending.
+The required measurements are in `out/benchmark_full.csv` (exactly six records) and `out/result_comparison.csv`. The final batch description, complete driver output, CLI submission output, submitted command, six result tables, and task-overlap screenshots are in `evidence/`. Results, duration, cost estimate, and limitations are documented below. The Task A and Task B changes have been merged into main. An independent teammate reviewed the merged code in a fresh repository clone and successfully ran the sample test using batch `pa5-peer-review-01`. The final report and Canvas submission are still pending.
 
 Earlier attempts 01–05 failed before Spark started because the execution service account lacked seven Dataproc Worker permissions. Worker had initially been granted to user accounts. Hadi's November 25 update added the exact service account to `roles/dataproc.worker` on this project, after which attempt 06 ran successfully. Earlier batch descriptions and errors are retained as `evidence/benchmark-attempt-*.yaml` and `evidence/submission-attempt-*.txt`. The original bucket-metadata denial and staging flag correction are also preserved. No failed attempt supplies a benchmark timing, and no zero-charge claim is made for them. The subnet-description check remained denied `compute.subnetworks.get`, but did not prevent submission or execution.
 
-Task B, new analyses, charts, presentation, and the complete final report remain outside this change.
+Task B has been completed and is documented in TASK_B_README.md. The final report and presentation materials are still being prepared.
 
 ## Parallel execution in the benchmark
 
@@ -258,7 +270,7 @@ This estimate excludes storage operations, Cloud Shell activity, network, loggin
 
 For the **existing preparation batch**, the saved final YAML reports 33,997,650 milliDCU-seconds and 3,442,800 shuffle-storage GB-seconds. Applying the same rates gives approximately $0.56663 compute + $0.05240 shuffle = **$0.61903**. This is an estimate for `pa5-prep-full-04`, separate from the new benchmark. Its total batch duration was 2,930.391 seconds.
 
-AI assistance was used to inspect materials, draft the scripts/documentation, and operate the validation workflow. The team must review and understand the changes; the PA5 instructions require a teammate who did not write the code to review and test the sample in a fresh environment before merging. The Task A changes are prepared for a pull request. Merge is pending the required teammate review and fresh-environment sample test; no Canvas submission was made.
+AI assistance was used to inspect materials, draft the scripts/documentation, and operate the validation workflow. The team must review and understand the changes; the PA5 instructions require a teammate who did not write the code to review and test the sample in a fresh environment before merging. The Task A and Task B pull requests have been merged. The independent review occurred before merging, and this timing is documented in evidence/peer_review.txt; no Canvas submission was made.
 
 ## Task A audit before merge (November 25)
 

@@ -77,19 +77,10 @@ To test the Task B script on the preserved sample Parquet in a fresh Colab envir
 bash pa5/src/submit_task_b.sh pa5-task-b-<YYYYMMDD>-<NN>
 
 
-#### Step 5C: Automated cross-check + verify git cleanliness & push your Task B branch
-Copy and paste this block into your **SJSU terminal** and press **Enter** (it verifies that our full Task B table matches `pa5/out/analysis_1_full.csv` with **0 differing rows**, confirms our script hashes match Cloud Shell, stages **only** Task B files, commits, and pushes `prajwal/pa5-task-b`):
+## 8. Verification summary
 
-```bash
-# 1. Programmatically verify Task B top-10 numbers match pa5/out/analysis_1_full.csv exactly
-python3 - << 'EOF'
-import csv
+The Task B full-data run completed successfully with batch ID `pa5-task-b-20261125-01`.
 
-with open("pa5/out/analysis_1_full.csv") as f:
-    a1 = {r["role_category"]: (int(r["credit_count"]), r["avg_billing_order"]) for r in csv.DictReader(f)}
+The full prepared input contained 102,980,307 rows. The output tables contain 13 role-cutoff rows and 39 role-tier rows. All count, schema, partition, and cross-analysis checks passed.
 
-with open("pa5/out/task_b_role_cutoff_full.csv") as f:
-    tb = {r["role_category"]: (int(r["top10_credits"]), r["avg_billing_top10"]) for r in csv.DictReader(f)}
-
-assert a1 == tb, f"Mismatch between Analysis 1 and Task B: {a1} vs {tb}"
-print("CROSS-CHECK PASSED: All 13 roles in Task B match pa5/out/analysis_1_full.csv with 0 differing rows.")
+The independent sample review was completed from a fresh repository clone using batch `pa5-peer-review-01`. The sample contained 1,000 rows, 0 exclusions, and 969 top-10 rows.
