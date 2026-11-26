@@ -1,0 +1,11 @@
+role_category,total_credits,top10_credits,beyond_top10_credits,top10_retention_pct,excluded_by_top10_pct,share_of_all_excluded_pct,avg_billing_all,avg_billing_top10
+composer,12,5,7,41.67,58.33,22.58,10.67,3.20
+actor,161,156,5,96.89,3.11,16.13,2.84,2.55
+cinematographer,107,102,5,95.33,4.67,16.13,4.07,3.56
+director,423,418,5,98.82,1.18,16.13,1.62,1.50
+writer,44,39,5,88.64,11.36,16.13,4.36,3.23
+producer,143,140,3,97.90,2.10,9.68,3.26,3.04
+production_designer,3,2,1,66.67,33.33,3.23,10.67,6.50
+actress,64,64,0,100.00,0.00,0.00,2.27,2.27
+editor,3,3,0,100.00,0.00,0.00,5.33,5.33
+self,40,40,0,100.00,0.00,0.00,2.15,2.15

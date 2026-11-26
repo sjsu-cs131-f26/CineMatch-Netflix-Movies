@@ -1,0 +1,63 @@
+createTime: '2026-11-26T02:24:28.220084Z'
+creator: prajwal.dacharla@sjsu.edu
+environmentConfig:
+  executionConfig:
+    authenticationConfig: {}
+    serviceAccount: 976390621265-compute@developer.gserviceaccount.com
+    stagingBucket: cinematch-team6-pa5-fa26
+    subnetworkUri: default
+    ttl: 600s
+  peripheralsConfig:
+    sparkHistoryServerConfig: {}
+labels:
+  goog-dataproc-batch-id: pa5-task-b-20261125-01
+  goog-dataproc-batch-uuid: 25cff6b2-98e4-4dce-a9b1-17f9d849503b
+  goog-dataproc-drz-resource-uuid: batch-25cff6b2-98e4-4dce-a9b1-17f9d849503b
+  goog-dataproc-location: us-central1
+name: projects/cs131-11-5-2026-hadikhan/locations/us-central1/batches/pa5-task-b-20261125-01
+operation: projects/cs131-11-5-2026-hadikhan/regions/us-central1/operations/5a16f224-ade6-3f37-8f51-ec4f97c244dc
+pysparkBatch:
+  args:
+  - gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/part-00000-82a720be-34e6-49c5-9869-a4705a80fa9d-c000.snappy.parquet
+  - gs://cinematch-team6-pa5-fa26/pa5/task_b/pa5-task-b-20261125-01
+  - pa5-task-b-20261125-01
+  - '102980307'
+  - '79193269'
+  mainPythonFileUri: gs://cinematch-team6-pa5-fa26/dependencies/task_b_billing_cutoff.py
+runtimeConfig:
+  properties:
+    dataproc:dataproc.tier: standard
+    spark:spark.app.name: projects/cs131-11-5-2026-hadikhan/locations/us-central1/batches/pa5-task-b-20261125-01
+    spark:spark.dataproc.autotuning.cohortId: 25cff6b2-98e4-4dce-a9b1-17f9d849503b
+    spark:spark.dataproc.driver.disk.size: 250g
+    spark:spark.dataproc.engine: default
+    spark:spark.dataproc.executor.disk.size: 250g
+    spark:spark.dataproc.lightningEngine.runtime: default
+    spark:spark.dataproc.scaling.version: '2'
+    spark:spark.driver.cores: '4'
+    spark:spark.driver.memory: 12g
+    spark:spark.driver.memoryOverhead: 4g
+    spark:spark.dynamicAllocation.enabled: 'false'
+    spark:spark.dynamicAllocation.executorAllocationRatio: '0.3'
+    spark:spark.executor.cores: '4'
+    spark:spark.executor.instances: '2'
+    spark:spark.executor.memory: 12g
+    spark:spark.executor.memoryOverhead: 4g
+    spark:spark.sql.adaptive.coalescePartitions.enabled: 'false'
+    spark:spark.sql.files.maxPartitionBytes: 8m
+    spark:spark.sql.shuffle.partitions: '32'
+    spark:spark.task.cpus: '1'
+  version: 2.3.44
+runtimeInfo:
+  cohortInfo:
+    cohort: 25cff6b2-98e4-4dce-a9b1-17f9d849503b
+  outputUri: gs://cinematch-team6-pa5-fa26/google-cloud-dataproc-metainfo/ce297264-ec51-4208-8194-9aaedc56224e/jobs/srvls-batch-25cff6b2-98e4-4dce-a9b1-17f9d849503b/driveroutput
+  propertiesInfo: {}
+state: SUCCEEDED
+stateHistory:
+- state: PENDING
+  stateStartTime: '2026-11-26T02:24:28.220084Z'
+- state: RUNNING
+  stateStartTime: '2026-11-26T02:25:39.809268Z'
+stateTime: '2026-11-26T02:26:57.637680Z'
+uuid: 25cff6b2-98e4-4dce-a9b1-17f9d849503b

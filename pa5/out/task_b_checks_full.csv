@@ -1,0 +1,13 @@
+check,value,note
+batch_id,pa5-task-b-20261125-01,Task B run identifier
+input_path,gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/part-00000-82a720be-34e6-49c5-9869-a4705a80fa9d-c000.snappy.parquet,prepared Parquet input object
+total_rows,102980307,all prepared credit rows
+top10_rows,79193269,rows with is_top10 == True
+beyond_top10_rows,23787038,rows with is_top10 == False
+overall_top10_retention_pct,76.90,percent kept by top-10 filter
+overall_excluded_pct,23.10,percent dropped by top-10 filter
+distinct_roles,13,distinct role_category labels
+role_cutoff_output_rows,13,rows in role_cutoff_summary
+role_tier_output_rows,39,rows in role_billing_tiers
+analysis_seconds,28.79,scan + group + sort + collect seconds
+validation_passed,True,all count and partition assertions passed

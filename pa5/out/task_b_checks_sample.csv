@@ -1,0 +1,13 @@
+check,value,note
+batch_id,sample-local-check,Task B run identifier
+input_path,/content/pa5_sample_prepared_credits_part-00000-9e10b347-facd-4811-bba4-329dcf3e8d74-c000.snappy.parquet,prepared Parquet input object
+total_rows,1000,all prepared credit rows
+top10_rows,969,rows with is_top10 == True
+beyond_top10_rows,31,rows with is_top10 == False
+overall_top10_retention_pct,96.90,percent kept by top-10 filter
+overall_excluded_pct,3.10,percent dropped by top-10 filter
+distinct_roles,10,distinct role_category labels
+role_cutoff_output_rows,10,rows in role_cutoff_summary
+role_tier_output_rows,25,rows in role_billing_tiers
+analysis_seconds,10.919,scan + group + sort + collect seconds
+validation_passed,True,all count and partition assertions passed
