@@ -1,0 +1,30 @@
+Google Cloud SDK 592.0.0
+alpha 2026.10.30
+app-engine-go 1.9.78
+app-engine-java 5.2.0
+app-engine-python 1.9.119
+app-engine-python-extras 1.9.111
+beta 2026.10.30
+bigtable 
+bq 2.1.41
+bundled-python3-unix 3.14.9
+cbt 1.25.7
+cloud-datastore-emulator 2.3.1
+cloud-run-proxy 0.5.2
+core 2026.10.30
+gcloud-crc32c 1.0.0
+gke-gcloud-auth-plugin 0.5.21
+gsutil 5.38
+istioctl 1.20.8143
+kpt 1.0.0-beta.67
+kubectl 1.35.9
+local-extract 1.6.4
+nomos 1.25.1-rc.2
+package-go-module 1.0.1
+preview 2026.10.30
+pubsub-emulator 0.8.37
+spanner-cli 1.0.6
+Python 3.12.3
+openjdk version "21.0.12.1" 2026-08-18
+OpenJDK Runtime Environment (build 21.0.12.1+1-1-24.04.4-Ubuntu)
+OpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)

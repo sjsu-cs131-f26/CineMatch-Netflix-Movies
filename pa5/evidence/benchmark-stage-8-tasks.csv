@@ -1,0 +1,6 @@
+stage_id,stage_attempt,associated_job_id,task_index,task_id,task_attempt,status,executor_id,host,launch_time_utc,duration_seconds
+8,0,6,8,150,0,SUCCESS,1,10.128.0.22,2026-11-25T20:38:40Z,5.72
+8,0,6,24,166,0,SUCCESS,0,10.128.0.20,2026-11-25T20:38:40Z,4.93
+8,0,6,40,182,0,SUCCESS,1,10.128.0.22,2026-11-25T20:38:41Z,5
+8,0,6,56,198,0,SUCCESS,0,10.128.0.20,2026-11-25T20:38:42Z,3.99
+8,0,6,66,208,0,SUCCESS,1,10.128.0.22,2026-11-25T20:38:42Z,2.32

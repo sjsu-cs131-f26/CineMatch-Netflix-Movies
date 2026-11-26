@@ -1,0 +1,69 @@
+createTime: '2026-11-25T20:24:08.902771Z'
+creator: aneesh.matcha@sjsu.edu
+environmentConfig:
+  executionConfig:
+    authenticationConfig: {}
+    serviceAccount: 976390621265-compute@developer.gserviceaccount.com
+    stagingBucket: cinematch-team6-pa5-fa26
+    subnetworkUri: default
+    ttl: 600s
+  peripheralsConfig:
+    sparkHistoryServerConfig: {}
+labels:
+  goog-dataproc-batch-id: pa5-task-a-20261125-05
+  goog-dataproc-batch-uuid: 879b2580-ffc1-4d6a-8290-1213f1984118
+  goog-dataproc-drz-resource-uuid: batch-879b2580-ffc1-4d6a-8290-1213f1984118
+  goog-dataproc-location: us-central1
+name: projects/cs131-11-5-2026-hadikhan/locations/us-central1/batches/pa5-task-a-20261125-05
+operation: projects/cs131-11-5-2026-hadikhan/regions/us-central1/operations/2c32e2c0-03ae-32cb-91fb-9b972fb39bcf
+pysparkBatch:
+  args:
+  - gs://cinematch-team6-pa5-fa26/pa5/prepared_credits/part-00000-82a720be-34e6-49c5-9869-a4705a80fa9d-c000.snappy.parquet
+  - expected_full.csv
+  - gs://cinematch-team6-pa5-fa26/pa5/task_a/pa5-task-a-20261125-05
+  - pa5-task-a-20261125-05
+  - '102980307'
+  - '79193269'
+  - '571124374'
+  fileUris:
+  - gs://cinematch-team6-pa5-fa26/dependencies/expected_full.csv
+  mainPythonFileUri: gs://cinematch-team6-pa5-fa26/dependencies/benchmark_task_a.py
+runtimeConfig:
+  properties:
+    dataproc:dataproc.tier: standard
+    spark:spark.app.name: projects/cs131-11-5-2026-hadikhan/locations/us-central1/batches/pa5-task-a-20261125-05
+    spark:spark.dataproc.autotuning.cohortId: 879b2580-ffc1-4d6a-8290-1213f1984118
+    spark:spark.dataproc.driver.disk.size: 250g
+    spark:spark.dataproc.engine: default
+    spark:spark.dataproc.executor.disk.size: 250g
+    spark:spark.dataproc.lightningEngine.runtime: default
+    spark:spark.dataproc.scaling.version: '2'
+    spark:spark.driver.cores: '4'
+    spark:spark.driver.memory: 12g
+    spark:spark.driver.memoryOverhead: 4g
+    spark:spark.dynamicAllocation.enabled: 'false'
+    spark:spark.dynamicAllocation.executorAllocationRatio: '0.3'
+    spark:spark.executor.cores: '4'
+    spark:spark.executor.instances: '2'
+    spark:spark.executor.memory: 12g
+    spark:spark.executor.memoryOverhead: 4g
+    spark:spark.sql.adaptive.coalescePartitions.enabled: 'false'
+    spark:spark.sql.files.maxPartitionBytes: 8m
+    spark:spark.task.cpus: '1'
+  version: '2.3'
+runtimeInfo:
+  cohortInfo:
+    cohort: 879b2580-ffc1-4d6a-8290-1213f1984118
+  propertiesInfo: {}
+state: FAILED
+stateHistory:
+- state: PENDING
+  stateStartTime: '2026-11-25T20:24:08.902771Z'
+stateMessage: "Custom Service Account '976390621265-compute@developer.gserviceaccount.com'\
+  \ is missing required permissions: [dataproc.agents.create, dataproc.agents.delete,\
+  \ dataproc.agents.get, dataproc.agents.update, dataproc.tasks.lease, dataproc.tasks.listInvalidatedLeases,\
+  \ dataproc.tasks.reportStatus]. Service Accounts must have either 'Dataproc/Dataproc\
+  \ Worker' role or all permissions granted by the role. See https://cloud.google.com/dataproc/docs/concepts/iam\
+  \ for further details."
+stateTime: '2026-11-25T20:24:11.830601Z'
+uuid: 879b2580-ffc1-4d6a-8290-1213f1984118

@@ -1,0 +1,14 @@
+bucket: cinematch-team6-pa5-fa26
+component_count: 5
+content_type: text/tab-separated-values
+crc32c_hash: WeDEOg==
+creation_time: 2026-11-25T00:30:42+0000
+etag: CKipjv/uoZgDEAE=
+generation: '1795566642369704'
+metageneration: 1
+name: imdb/title.basics.tsv.gz
+size: 230969188
+storage_class: STANDARD
+storage_class_update_time: 2026-11-25T00:30:42+0000
+storage_url: gs://cinematch-team6-pa5-fa26/imdb/title.basics.tsv.gz#1795566642369704
+update_time: 2026-11-25T00:30:42+0000

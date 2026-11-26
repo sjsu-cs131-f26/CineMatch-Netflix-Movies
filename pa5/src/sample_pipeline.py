@@ -15,7 +15,7 @@ LOOKUP_PATH = "gs://cinematch-team6-pa5-fa26/pa5/sample/title_basics_lookup.tsv"
 
 PARQUET_PATH = (
     "gs://cinematch-team6-pa5-fa26/"
-    "pa5/prepared_credits"
+    "pa5/sample/prepared_credits"
 )
 
 schema = (

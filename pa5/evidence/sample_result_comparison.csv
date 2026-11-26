@@ -1,0 +1,7 @@
+approach,run,expected_rows,output_rows,differing_rows,result_verified
+shuffle_200,1,10,10,0,True
+shuffle_32,1,10,10,0,True
+shuffle_32,2,10,10,0,True
+shuffle_200,2,10,10,0,True
+shuffle_200,3,10,10,0,True
+shuffle_32,3,10,10,0,True

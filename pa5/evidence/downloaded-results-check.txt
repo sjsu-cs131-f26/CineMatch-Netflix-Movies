@@ -1,0 +1,9 @@
+Session run 1: shuffle_200 repetition 1; all 13 saved rows match reference exactly.
+Session run 2: shuffle_32 repetition 1; all 13 saved rows match reference exactly.
+Session run 3: shuffle_32 repetition 2; all 13 saved rows match reference exactly.
+Session run 4: shuffle_200 repetition 2; all 13 saved rows match reference exactly.
+Session run 5: shuffle_200 repetition 3; all 13 saved rows match reference exactly.
+Session run 6: shuffle_32 repetition 3; all 13 saved rows match reference exactly.
+shuffle_200: times=[9.612193898000001, 6.052946964, 6.104315442000001]; median=6.104315442000001; min=6.052946964; max=9.612193898000001; range=3.559246934000001
+shuffle_32: times=[7.060400137999991, 6.29087954500001, 5.448974581000002]; median=6.29087954500001; min=5.448974581000002; max=7.060400137999991; range=1.6114255569999898
+Query timer sum: 40.569710568000005
