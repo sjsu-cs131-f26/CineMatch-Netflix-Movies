@@ -1,0 +1,18 @@
+Pull requests reviewed: PA5 Task A PR and PR #8
+Commits reviewed:
+- 2265d75 Complete PA5 Task A full-data benchmark and execution evidence
+- f09e962 Complete PA5 Task B full-dataset billing cutoff and tier audit
+
+Merged repository commit tested:
+773c024 Merge pull request #8 from sjsu-cs131-f26/prajwal/pa5-task-b
+
+Environment: Fresh repository clone at ~/pa5-peer-review
+Sample test: Passed
+Dataproc batch: pa5-peer-review-01
+Sample rows before cleaning: 1000
+Sample rows excluded: 0
+Sample rows after cleaning: 1000
+Sample Parquet read-back rows: 1000
+Sample top-10 rows: 969
+Review timing: Before the PRs were merged
+Notes: The sample pipeline completed successfully.
