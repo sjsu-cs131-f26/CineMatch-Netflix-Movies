@@ -1,0 +1,61 @@
+PA5 Submission Summary
+======================
+
+Team:
+Team 6 – CineMatch Netflix Movies
+
+Members:
+- Hadi Khan
+- Aneesh Matcha
+- Pouya Anvari
+- Prajwal Dacharla
+- Krishna Kuchibhatla
+
+Repository:
+https://github.com/sjsu-cs131-f26/CineMatch-Netflix-Movies
+
+Final code commit:
+cf32310 (HEAD -> main, origin/main, origin/HEAD) Clean up PA5 documentation and peer review
+
+Final report:
+pa5/docs/final_report.pdf
+
+Main implementation:
+- pa5/src/full_pipeline.py
+- pa5/src/benchmark_task_a.py
+- pa5/src/task_b_billing_cutoff.py
+
+Important outputs:
+- pa5/out/analysis_1_full.csv
+- pa5/out/analysis_2_full.csv
+- pa5/out/benchmark_full.csv
+- pa5/out/result_comparison.csv
+- pa5/out/quality_checks_full.csv
+- pa5/out/task_b_role_cutoff_full.csv
+- pa5/out/task_b_role_billing_tiers_full.csv
+
+Cloud execution:
+- Full preparation batch: pa5-prep-full-04
+- Benchmark batch: pa5-task-a-20261125-06
+- Task B batch: pa5-task-b-20261125-01
+- Independent sample review batch: pa5-peer-review-01
+- Region: us-central1
+- Cloud Storage bucket: gs://cinematch-team6-pa5-fa26
+
+Verification:
+- Full prepared rows: 102,980,307
+- Rows excluded by cleaning rules: 0
+- Full top-10 rows: 79,193,269
+- Benchmark runs: 6 total, 3 per approach
+- Benchmark result differences: 0
+- Independent sample review: passed from a fresh repository clone
+
+Pull requests:
+- Task A PR: https://github.com/sjsu-cs131-f26/CineMatch-Netflix-Movies/pull/7
+- Task B PR: https://github.com/sjsu-cs131-f26/CineMatch-Netflix-Movies/pull/8
+
+AI disclosure:
+AI was used for brainstorming, debugging assistance, documentation review, and guidance with Dataproc. All commands were created and ran by ourselves. AI served as a helper to keep us on track, but all technical execution was done ourselves. 
+
+Submission status:
+The code, outputs, evidence, and report are committed to the team repository. The final HTTPS clone command and Canvas submission will be completed by the designated team member.
