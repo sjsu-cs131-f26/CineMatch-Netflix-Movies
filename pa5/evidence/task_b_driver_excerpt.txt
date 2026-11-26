@@ -1,0 +1,25 @@
+('production_designer', 3, 'beyond_top10_11_plus', 1013731, '84.59', '18.67')
+('self', 1, 'lead_1_to_3', 8974228, '57.14', '1.78')
+('self', 2, 'supporting_4_to_10', 6610935, '42.09', '6.20')
+('self', 3, 'beyond_top10_11_plus', 120671, '0.77', '13.65')
+('writer', 1, 'lead_1_to_3', 1344130, '10.99', '2.37')
+('writer', 2, 'supporting_4_to_10', 4991758, '40.83', '6.83')
+('writer', 3, 'beyond_top10_11_plus', 5889948, '48.18', '13.41')
+Batch [pa5-task-b-20261125-01] finished.
+metadata:
+  '@type': type.googleapis.com/google-cloud-dataproc.v1.BatchOperationMetadata
+  batch: projects/cs131-11-5-2026-hadikhan/locations/us-central1/batches/pa5-task-b-20261125-01
+  batchUuid: 25cff6b2-98e4-4dce-a9b1-17f9d849503b
+  createTime: '2026-11-26T02:24:28.220084Z'
+  description: Batch
+  labels:
+    goog-dataproc-batch-id: pa5-task-b-20261125-01
+    goog-dataproc-batch-uuid: 25cff6b2-98e4-4dce-a9b1-17f9d849503b
+    goog-dataproc-drz-resource-uuid: batch-25cff6b2-98e4-4dce-a9b1-17f9d849503b
+    goog-dataproc-location: us-central1
+  operationType: BATCH
+name: projects/cs131-11-5-2026-hadikhan/regions/us-central1/operations/5a16f224-ade6-3f37-8f51-ec4f97c244dc
+
+real    2m42.200s
+user    0m1.198s
+sys     0m0.167s
